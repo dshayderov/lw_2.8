@@ -66,10 +66,7 @@ def select_planes(staff, jet):
     Выбрать самолеты с заданным типом.
     """
     # Сформировать список самолетов.
-    result = []
-    for plane in staff:
-        if jet == plane.get('typ', ''):
-            result.append(plane)
+    result = [plane for plane in staff if jet == plane.get('typ', '')]
 
     # Возвратить список выбранных самолетов.
     return result
